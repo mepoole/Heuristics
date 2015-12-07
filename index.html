@@ -1,0 +1,97 @@
+        <!--  link rel="stylesheet" type="text/css" href="styles.css" -->
+<style>
+	body {
+    background-color: #f5f8fa;
+}
+
+#main {
+    width: 800px;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+
+#left-pane {
+    float: left;
+}
+
+#right-pane {
+    float: left;
+    padding-left: 5px;
+}
+
+#canvas {
+    border:1px solid #c3c3c3;
+}
+
+#right-pane div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#mousePosition {
+    border:1px solid #c3c3c3;
+}
+</style>
+        <div id="gameArea">
+            <div id="left-pane">
+                <canvas id="canvas" width="500" height="500">
+                    Your browser does not support the HTML5 canvas tag.
+                </canvas>
+            </div>
+            <div id="right-pane">
+                <div id="mousePosition">x:? y:?</div>
+                <div>
+                    <button id="reset" type="button">Reset</button>
+                </div>
+                <div id="scores"></div>
+                <div id="message">Player 1 to move</div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+
+            //this function closure updates the board, and listens for actions from the GUI
+            //it also contains the gamestate instance and calls functions as necessary 
+            function boardState(){
+                var gs = null;
+
+                //these are the possible functions that can be called on the board state
+                return{
+                    initBoard: function(){
+                        //do something to initialize or reset the board
+                        ds = null;
+                    }
+
+                    startGame: function(){
+                     gs = gameState();
+
+                    }
+
+                    endGame: function(){
+                        gs = null;
+                    }
+                }
+
+            }
+
+            //this function closure is used to maintain the game state.
+            //the GUI calls different functions from the closure to update the state
+            function gameState(){
+
+
+                //these are the possible functions that can be called on the game state
+                return{
+                   placeAmbulance: function(){
+
+                   }
+                   placeHospital: function(){
+
+                   } 
+                }
+
+            }
+
+        </script>
